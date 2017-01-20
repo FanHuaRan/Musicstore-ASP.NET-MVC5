@@ -11,7 +11,7 @@ namespace MusicStore.Models
     /// </summary>
     public class Artist
     {
-        public int ArtistId { get; set; }
+        public Int64 ArtistId { get; set; }
 
         public string Name { get; set; }
     }

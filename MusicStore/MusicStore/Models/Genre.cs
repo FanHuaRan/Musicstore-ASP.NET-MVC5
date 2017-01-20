@@ -11,7 +11,7 @@ namespace MusicStore.Models
     /// </summary>
     public class Genre
     {
-        public int GenreId { get; set; }
+        public Int32 GenreId { get; set; }
 
         public string Name { get; set; }
 

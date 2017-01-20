@@ -11,18 +11,20 @@ namespace MusicStore.Models
     /// </summary>
     public class Album
     {
-        public  int AlbumId { get; set; }
+        public  Int64 AlbumId { get; set; }
 
-        public int GenreId { get; set; }
+        public Int32 GenreId { get; set; }
 
-        public int ArtistId { get; set; }
+        public Int64 ArtistId { get; set; }
 
         public string Title { get; set; }
 
-        public float Price { get; set; }
+        public decimal Price { get; set; }
 
         public string AlbumArtUrl { get; set; }
 
-      //  public 
+        public Artist Artist { get; set; }
+
+        public Genre Genre { get; set; }
     }
 }
