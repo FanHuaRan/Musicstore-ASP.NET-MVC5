@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{53EE0806-C796-4315-8270-B072AEE593E4}</ProjectGuid>
+    <ProjectGuid>{C7B22E79-4A9D-44BF-9D0A-E38C04B4DEEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MusicStore.Tests</RootNamespace>
@@ -82,7 +82,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityManager\AlbumManagerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -94,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MusicStore\MusicStore.csproj">
-      <Project>{FCCB2E41-51DE-41E3-8F16-F24BEFAD349F}</Project>
+      <Project>{CB80C82C-5E38-4CC3-AF61-D4479A5A9729}</Project>
       <Name>MusicStore</Name>
     </ProjectReference>
   </ItemGroup>

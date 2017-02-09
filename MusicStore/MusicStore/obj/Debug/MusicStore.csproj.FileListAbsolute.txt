@@ -71,3 +71,4 @@ E:\Programing\c#\Musicstore-ASP.NET-MVC5\MusicStore\MusicStore\bin\zh-Hans\Micro
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\MusicStore\MusicStore\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\MusicStore\MusicStore\obj\Debug\MusicStore.dll
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\MusicStore\MusicStore\obj\Debug\MusicStore.pdb
+E:\Programing\c#\Musicstore-ASP.NET-MVC5\MusicStore\MusicStore\obj\Debug\MusicStore.csprojResolveAssemblyReference.cache

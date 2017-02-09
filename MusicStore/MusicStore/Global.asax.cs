@@ -8,14 +8,12 @@ using System.Web.Routing;
 
 namespace MusicStore
 {
-    /// <summary>
-    /// Web程序类
-    /// </summary>
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new MusicStore.Models.SampleData());
+            //Code First 数据库初始化
+            System.Data.Entity.Database.SetInitializer(new MusicStore.EntityContext.SampleData());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

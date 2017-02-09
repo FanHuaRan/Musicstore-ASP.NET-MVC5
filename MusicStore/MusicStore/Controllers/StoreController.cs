@@ -1,7 +1,9 @@
-﻿using MusicStore.EntityFrame;
+﻿using MusicStore.EntityContext;
+using MusicStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,25 +11,42 @@ namespace MusicStore.Controllers
 {
     public class StoreController : Controller
     {
-        MyContext context = MyContext.Context;
+        private MusicStoreEntities storeDB = new MusicStoreEntities();
         //
         // GET: /Store/
         public ActionResult Index()
         {
-            var genre = context.Genres.ToList();
-            return View(genre);
+            var genres = storeDB.Genres.ToList();
+            return View(genres);
         }
         //
         // GET: /Store/Browse
-        public string Browse()
+        public ActionResult Browse(string genre)
         {
-            return "Hello from Store.Browse()";
+            // Retrieve Genre and its Associated Albums from database
+            //Include("Albums")指定返回结果要包含关联Album
+            Genre example = storeDB.Genres.Include("Albums").Single(p => p.Name == genre);
+            List<Album> albums = example.Albums;
+            return View(example);
         }
         //
         // GET: /Store/Details
-        public string Details()
+        public ActionResult Details(int? id)
         {
-            return "Hello from Store.Details()";
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Album album = storeDB.Albums.Find(id);
+            return View(album);
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                storeDB.Dispose();
+            }
+            base.Dispose(disposing);
         }
 	}
 }
