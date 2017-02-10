@@ -12,13 +12,26 @@
         <h1>ASP.NET MVC MUSIC STORE</h1>
         <ul id="navlist">
             <li class="first">  
-                <a href="/" id="current">Home</a>
+                <a href="@Url.Content("~")" id="current">Home</a>
             </li>
             <li>
                 <a href="/Store/">Store</a>
             </li>
+            <li>
+                @{Html.RenderAction("CartSummary", "ShoppingCart");}
+            </li>
+            <li>
+            <li>
+                 <a href="@Url.Content("~/StoreManager/")">Admin</a>
+            </li>
         </ul>
     </div>
-    @RenderBody()
+    @{Html.RenderAction("GenreMenu","Store");}
+    <div id="main">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        built with <a href="http://asp.net/mvc">ASP.NET MVC 5</a>
+    </div>
 </body>
 </html>

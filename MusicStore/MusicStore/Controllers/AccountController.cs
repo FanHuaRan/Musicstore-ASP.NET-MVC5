@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Mvc3ToolsUpdateWeb_Default.Models;
+using MusicStore.Models;
 
 namespace Mvc3ToolsUpdateWeb_Default.Controllers
 {
@@ -28,8 +29,28 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                //ASP Web管理器暂时无法使用 所以进行硬编码
+                //角色也无法使用 ....
+                //账号：Admin
+                //密码：admin
+                #region 暂时无法使用
+                //if (Membership.ValidateUser(model.UserName, model.Password))
+                //{
+                //    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                //    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                //        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                //    {
+                //        return Redirect(returnUrl);
+                //    }
+                //    else
+                //    {
+                //        return RedirectToAction("Index", "Home");
+                //    }
+                //}
+                #endregion
+                if(model.UserName=="Admin"&&model.Password=="admin")
                 {
+                    MigrateShoppingCart(model.UserName);
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
@@ -46,7 +67,6 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
                     ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -83,6 +103,7 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    MigrateShoppingCart(model.UserName);
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
@@ -149,7 +170,17 @@ namespace Mvc3ToolsUpdateWeb_Default.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 迁移购物车
+        /// </summary>
+        /// <param name="UserName"></param>
+        private void MigrateShoppingCart(string UserName)
+        {
+            // Associate shopping cart items with logged-in user
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+            cart.MigrateCart(UserName);
+            Session[ShoppingCart.CartSessionKey] = UserName;
+        }
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {

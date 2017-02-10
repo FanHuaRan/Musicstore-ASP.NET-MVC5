@@ -11,6 +11,9 @@ using MusicStore.EntityContext;
 
 namespace MusicStore.Controllers
 {
+    //暂时无法ASP WEB管理器
+    //[Authorize(Roles = "Administrator")]
+    [Authorize]
     public class StoreManagerController : Controller
     {
         private MusicStoreEntities db = new MusicStoreEntities();
