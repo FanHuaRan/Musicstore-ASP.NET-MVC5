@@ -9,7 +9,7 @@ namespace MusicStore.Services.Impl
 {
     public class ShopCartServiceClass:IShopCartService
     {
-        private MusicStoreEntities storeDB = new MusicStoreEntities();
+        private readonly MusicStoreEntities storeDB = new MusicStoreEntities();
         public string FindCartAlbumTitle(int cartRecordId)
         {
             Cart cart = storeDB.Carts.Include(p => p.Album)

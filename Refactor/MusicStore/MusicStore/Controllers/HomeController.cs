@@ -12,7 +12,7 @@ namespace MusicStore.Controllers
 {
     public class HomeController : Controller
     {
-        private IAlbumService albumService = ServiceLocator.AlbumService;
+        private readonly IAlbumService albumService = ServiceLocator.AlbumService;
         //
         // GET: /Home/
         public ActionResult Index()

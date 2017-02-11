@@ -9,8 +9,8 @@ namespace MusicStore.Services.Impl
 {
     public class ShoppingComponet : IShoppingComponet
     {
-        private IShopCartService shopCartService = null;
-        private IOrderService orderService = null;
+        private readonly IShopCartService shopCartService;
+        private readonly IOrderService orderService;
         public ShoppingComponet(IShopCartService shopCartService,IOrderService orderService)
         {
             this.shopCartService = shopCartService;

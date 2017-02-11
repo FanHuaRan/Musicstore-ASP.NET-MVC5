@@ -8,7 +8,7 @@ namespace MusicStore.Services.Impl
 {
     public class CheckoutServiceClass:ICheckoutService
     {
-        private IOrderService orderService;
+        private readonly IOrderService orderService;
         private const string PromoCode="FREE";
         public CheckoutServiceClass(IOrderService orderService)
         {

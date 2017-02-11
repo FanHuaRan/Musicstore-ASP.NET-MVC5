@@ -13,8 +13,8 @@ namespace MusicStore.Controllers
 {
     public class StoreController : Controller
     {
-        IGenreService genreService = ServiceLocator.GenreService;
-        IAlbumService albumService = ServiceLocator.AlbumService;
+        private readonly IGenreService genreService = ServiceLocator.GenreService;
+        private readonly IAlbumService albumService = ServiceLocator.AlbumService;
         //
         // GET: /Store/
         public ActionResult Index()

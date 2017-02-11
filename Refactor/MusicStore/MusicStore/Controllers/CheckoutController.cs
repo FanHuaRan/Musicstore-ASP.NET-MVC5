@@ -13,7 +13,7 @@ namespace MusicStore.Controllers
     [Authorize]
     public class CheckoutController : Controller
     {
-        ICheckoutService CheckOutService = ServiceLocator.CheckoutService;
+        private readonly ICheckoutService CheckOutService = ServiceLocator.CheckoutService;
         //
         // GET: /Checkout/
         public ActionResult AddressAndPayment()

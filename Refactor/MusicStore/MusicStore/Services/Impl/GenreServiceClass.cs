@@ -11,7 +11,7 @@ namespace MusicStore.Services.Impl
 {
     public class GenreServiceClass:IGenreService
     {
-        private MusicStoreEntities storeDB = new MusicStoreEntities();
+        private readonly MusicStoreEntities storeDB = new MusicStoreEntities();
         public Genre FindGenreByName(string genreName)
         {
             return storeDB.Genres

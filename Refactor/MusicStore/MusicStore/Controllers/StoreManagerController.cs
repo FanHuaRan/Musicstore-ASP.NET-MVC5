@@ -18,8 +18,8 @@ namespace MusicStore.Controllers
     [Authorize]
     public class StoreManagerController : Controller
     {
-        IAlbumService albumService = ServiceLocator.AlbumService;
-        IGenreService genreService = ServiceLocator.GenreService;
+        private readonly IAlbumService albumService = ServiceLocator.AlbumService;
+        private readonly IGenreService genreService = ServiceLocator.GenreService;
 
         // GET: /StoreManager/
         public ActionResult Index()

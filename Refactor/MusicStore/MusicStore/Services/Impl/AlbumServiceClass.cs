@@ -10,7 +10,7 @@ namespace MusicStore.Services.Impl
 {
     public class AlbumServiceClass:IAlbumService
     {
-        private MusicStoreEntities storeDB = new MusicStoreEntities();
+        private readonly MusicStoreEntities storeDB = new MusicStoreEntities();
         public IEnumerable<Models.Album> GetTopSellingAlbums(int count)
         {
             // Group the order details by album and return

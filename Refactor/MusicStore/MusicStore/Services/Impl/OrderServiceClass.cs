@@ -10,7 +10,7 @@ namespace MusicStore.Services.Impl
 {
     public class OrderServiceClass:IOrderService
     {
-        private MusicStoreEntities storeDB = new MusicStoreEntities();
+        private readonly MusicStoreEntities storeDB = new MusicStoreEntities();
         public bool OrderIsExist(int orderId, string userName)
         {
             return storeDB.Orders.Any(o => o.OrderId == orderId

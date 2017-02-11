@@ -13,8 +13,8 @@ namespace MusicStore.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        IShopCartService shopCartService = ServiceLocator.ShopCartService;
-        IAlbumService albumService = ServiceLocator.AlbumService;
+        private readonly IShopCartService shopCartService = ServiceLocator.ShopCartService;
+        private readonly IAlbumService albumService = ServiceLocator.AlbumService;
         //
         // GET: /ShoppingCart/
         public ActionResult Index()
