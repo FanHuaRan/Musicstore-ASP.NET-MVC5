@@ -1,0 +1,23 @@
+﻿@model MusicStore.Models.Genre
+
+@{
+    ViewBag.Title = "Browse Albums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="genre">
+    <h3>
+        <em>@Model.Name</em>Albums
+    </h3>
+    <ul>
+        @foreach (var album in Model.Albums)
+        {
+            <li>
+                <a href="@Url.Action("Details",new { id = album.AlbumId })">
+                    <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                     <span>@album.Title</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+

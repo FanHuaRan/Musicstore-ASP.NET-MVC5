@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MusicStore.Models.Genre>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h3>Browse Genres</h3>
+
+<p>
+    select from @Model.Count() genres:
+</p>
+
+<ul>
+    @foreach (var genre in Model)
+    {
+        <li>
+           @*<a href="/Store/Browse?genre=@genre.Name"> @genre.Name</a> *@ 
+            @*动态链接推荐*@
+            @Html.ActionLink(genre.Name, "Browse", new  {genre=genre.Name })
+        </li>
+    }
+</ul>

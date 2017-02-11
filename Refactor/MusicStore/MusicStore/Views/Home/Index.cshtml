@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MusicStore.Models.Album>
+@{
+    //加载布局页面
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<div id="promotion">
+</div>
+<h2>Music Stre Home Page</h2>
+<h3><em>Fresh</em>off the grill</h3>
+<ul>
+    @foreach (var album in @Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store", new { id=album.AlbumId})">
+                <img alt="@album.Title" src="@album.AlbumArtUrl" />
+                <span>@album.Title</span>
+            </a>
+        </li>
+    }
+</ul>
