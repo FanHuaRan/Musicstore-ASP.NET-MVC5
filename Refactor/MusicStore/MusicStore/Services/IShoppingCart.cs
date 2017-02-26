@@ -15,7 +15,6 @@ namespace MusicStore.Services
         void EmptyCart();
         int GetCount();
         decimal GetTotal();
-        int CreateOrder(Order order);
         string GetCartId(HttpContextBase context);
         void MigrateCart(string userName);
     }

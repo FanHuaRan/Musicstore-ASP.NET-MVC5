@@ -83,16 +83,7 @@ namespace MusicStore.Services.Impl
             decimal? total = shopCartService.StaticTotalMoney(shoppingCartId);
             return total ?? 0;
         }
-        public int CreateOrder(Order order, string shoppingCartId)
-        {
-            var cartItems = GetCartItems(shoppingCartId);
-            orderService.InitialUpdateOrderAndCreatOrderDetails(order, cartItems);
-            // Empty the shopping cart
-            EmptyCart(shoppingCartId);
-            // Return the OrderId as the confirmation number
-            return order.OrderId;
-
-        }
+      
         // We're using HttpContextBase to allow access to cookies.
         public string GetCartId(HttpContextBase context)
         {

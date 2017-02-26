@@ -4,7 +4,6 @@ namespace MusicStore.Services
     public interface IShoppingComponet
     {
         void AddToCart(MusicStore.Models.Album album, string shoppingCartId);
-        int CreateOrder(MusicStore.Models.Order order, string shoppingCartId);
         void EmptyCart(string shoppingCartId);
         string GetCartId(System.Web.HttpContextBase context);
         System.Collections.Generic.List<MusicStore.Models.Cart> GetCartItems(string shoppingCartId);

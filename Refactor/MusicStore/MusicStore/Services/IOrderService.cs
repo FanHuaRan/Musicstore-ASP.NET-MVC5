@@ -12,6 +12,6 @@ namespace MusicStore.Services
         bool OrderIsExist(Int32 orderId, string userName);
         Order CreateOrder(Order order);
         void EditOrder(Order order);
-        void InitialUpdateOrderAndCreatOrderDetails(Order order, IEnumerable<Cart> cartItems);
+        void creatOrderDetails(Order order, IEnumerable<Cart> cartItems);
     }
 }

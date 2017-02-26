@@ -30,10 +30,10 @@ namespace MusicStore.Services.Impl
             storeDB.SaveChanges();
         }
 
-        public void InitialUpdateOrderAndCreatOrderDetails(Models.Order order, IEnumerable<Models.Cart> cartItems)
+        public void creatOrderDetails(Models.Order order, IEnumerable<Models.Cart> cartItems)
         {
             //order have create and is going to update information
-            decimal orderTotal = 0;
+            //decimal orderTotal = 0;
             // Iterate over the items in the cart, adding the order details for each
             foreach (var item in cartItems)
             {
@@ -45,12 +45,13 @@ namespace MusicStore.Services.Impl
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Album.Price);
+               // orderTotal += (item.Count * item.Album.Price);
                 storeDB.OrderDetails.Add(orderDetail);
             }
             // Set the order's total to the orderTotal count
-            order.Total = orderTotal;
+          //  order.Total = orderTotal;
             // Save the order
+            
             storeDB.SaveChanges();
         }
         public void Dispose()

@@ -27,11 +27,13 @@ namespace MusicStore.Controllers
         {
             var order = new Order();
             TryUpdateModel(order);
-            if(CheckOutService.AddressAndPayment(ref order, User.Identity.Name, values["PromoCode"]))
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+            order.Total = cart.GetTotal();
+            if(CheckOutService.AddressAndPayment(ref order, cart,User.Identity.Name, values["PromoCode"]))
             {
                     //Process the order
-                    var cart = ShoppingCart.GetCart(this.HttpContext);
-                    cart.CreateOrder(order);
+                   // var cart = ShoppingCart.GetCart(this.HttpContext);
+                   // cart.CreateOrder(order);
                     return RedirectToAction("Complete", new { id = order.OrderId });
             }
             else

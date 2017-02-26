@@ -63,11 +63,6 @@ namespace MusicStore.Models
             // sum all album price totals to get the cart total
             return shoppingComponet.GetTotal(ShoppingCartId);
         }
-        public int CreateOrder(Order order)
-        {
-            return shoppingComponet.CreateOrder(order,ShoppingCartId);
-
-        }
         // We're using HttpContextBase to allow access to cookies.
         public string GetCartId(HttpContextBase context)
         {

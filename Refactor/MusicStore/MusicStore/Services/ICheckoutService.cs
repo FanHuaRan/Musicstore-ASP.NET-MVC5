@@ -9,7 +9,7 @@ namespace MusicStore.Services
 {
     public interface ICheckoutService
     {
-        bool AddressAndPayment(ref Order order, string userName, string userPromoCode);
+        bool AddressAndPayment(ref Order order, ShoppingCart cart,string userName, string userPromoCode);
         bool OrderIsValid(Int32 orderId, string userName);
     }
 }

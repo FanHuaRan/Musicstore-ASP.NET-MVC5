@@ -14,7 +14,7 @@ namespace MusicStore.Services.Impl
         {
             this.orderService = orderService;
         }
-        public bool AddressAndPayment(ref Order order, string userName,string userPromoCode)
+        public bool AddressAndPayment(ref Order order,ShoppingCart cart,string userName,string userPromoCode)
         {
             try
             {
@@ -27,8 +27,10 @@ namespace MusicStore.Services.Impl
                 {
                     order.Username = userName;
                     order.OrderDate = DateTime.Now;
-                    //Save Order
+                    order.Total = cart.GetTotal();
                     order=orderService.CreateOrder(order);
+                    orderService.creatOrderDetails(order, cart.GetCartItems());
+                    cart.EmptyCart();
                     return true;
                 }
             }
