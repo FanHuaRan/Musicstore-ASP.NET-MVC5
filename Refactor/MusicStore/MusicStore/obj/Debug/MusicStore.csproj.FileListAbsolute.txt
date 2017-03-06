@@ -145,3 +145,4 @@ E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\bin\zh-H
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\obj\Debug\MusicStore.dll
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\obj\Debug\MusicStore.pdb
+E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\obj\Debug\MusicStore.csprojResolveAssemblyReference.cache
