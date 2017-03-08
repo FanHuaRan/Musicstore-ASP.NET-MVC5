@@ -35,5 +35,9 @@ namespace MusicStore.Controllers
         {
             return View("NoFound");
         }
+       public ActionResult BadRequest()
+        {
+            return View("BadRequest");
+        }
 	}
 }

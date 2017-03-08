@@ -40,8 +40,13 @@ namespace MusicStore
             Exception ex = Server.GetLastError();
             if(ex is HttpException)
             {
-                //不对403 404错误进行日志记录
+                //不对400 403 404错误进行日志记录
                 HttpException httpException=ex as HttpException;
+                //错误请求错误
+                if (httpException.GetHttpCode() == 400)
+                {
+                    Response.Redirect("/Home/BadRequest");
+                }
                 //未授权错误
                 if (httpException.GetHttpCode() == 403)
                 {

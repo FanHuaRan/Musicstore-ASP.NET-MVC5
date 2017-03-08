@@ -11,7 +11,8 @@ using System.Web.Mvc;
 namespace MusicStore.Filters
 {
     /// <summary>
-    /// 自定义动作和结果过滤器+特性
+    /// 自定义动作和结果过滤器+注解特性
+    /// 既可以在全局过滤器中进行注册 又可以标记在方法或者类上
     /// ActionFilterAttribute继承FilterAttibute,实现IActionFilter and IResultFilter
     /// 实现访问日志记录等功能
     /// </summary>

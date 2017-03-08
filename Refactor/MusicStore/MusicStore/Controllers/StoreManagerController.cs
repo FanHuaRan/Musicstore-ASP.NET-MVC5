@@ -13,8 +13,12 @@ using MusicStore.Locators;
 
 namespace MusicStore.Controllers
 {
-    //暂时无法ASP WEB管理器
-    //[Authorize(Roles = "Administrator")]
+    /// <summary>
+    ///暂时无法ASP WEB管理器
+    ///[Authorize(Roles = "Administrator")]
+    /// 这儿没有通过异常抛出实现自定义错误页面
+    /// 只是为了学习原生的处理办法 留着备用
+    /// </summary>
     [Authorize]
     public class StoreManagerController : Controller
     {

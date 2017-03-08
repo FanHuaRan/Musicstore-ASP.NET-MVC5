@@ -148,3 +148,4 @@ E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\obj\Debu
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\bin\log4net.config
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\bin\log4net.dll
 E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\bin\log4net.xml
+E:\Programing\c#\Musicstore-ASP.NET-MVC5\Refactor\MusicStore\MusicStore\obj\Debug\MusicStore.csprojResolveAssemblyReference.cache

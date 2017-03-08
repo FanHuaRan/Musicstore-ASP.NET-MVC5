@@ -11,6 +11,9 @@ using System.Web.Mvc;
 
 namespace MusicStore.Controllers
 {
+    /// <summary>
+    /// 对于错误请求全部进行了异常抛出
+    /// </summary>
     public class StoreController : Controller
     {
         private readonly IGenreService genreService = ServiceLocator.GenreService;
@@ -28,7 +31,16 @@ namespace MusicStore.Controllers
         {
             // Retrieve Genre and its Associated Albums from database
             //Include("Albums")指定返回结果要包含关联Album
+            if (string.IsNullOrEmpty(genre))
+            {
+                //采用异常抛出 否则不能实现自定义错误页面
+                throw new HttpException(400, "Bad Request");
+            }
             var example = genreService.FindGenreByName(genre);
+            if (example == null)
+            {
+                throw new HttpException(404, "Wrong Url");
+            }
             return View(example);
         }
         //
@@ -37,9 +49,16 @@ namespace MusicStore.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //采用异常抛出 否则不能实现自定义错误页面
+                throw new HttpException(400,"Bad Request");
+              //  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Album album = albumService.FindAlbumById(id.Value);
+            if (album == null)
+            {
+                throw new HttpException(404, "Wrong Url");
+               // return HttpNotFound();
+            }
             return View(album);
         }
         //

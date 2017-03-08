@@ -8,7 +8,8 @@ using System.Web.Mvc;
 namespace MusicStore.Filters
 {
     /// <summary>
-    /// 异常处理拦截器+特性
+    /// 异常处理拦截器+注解特性
+    /// 既可以在全局过滤器中进行注册 又可以标记在方法或者类上
     /// </summary>
     public class FilterExceptionAttribute:FilterAttribute,IExceptionFilter
     {
