@@ -3,6 +3,11 @@ using System.Web.Optimization;
 
 namespace MusicStore
 {
+    /// <summary>
+    /// 在这里注册相关打包资源
+    /// 其实就是将应用程序的相关资源进行统一打包
+    /// 然后就可以直接引用
+    /// </summary>
     public class BundleConfig
     {
         // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862

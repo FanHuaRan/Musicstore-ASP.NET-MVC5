@@ -7,6 +7,9 @@ using System.Web.Routing;
 
 namespace MusicStore
 {
+    /// <summary>
+    /// 在这里面注册路由
+    /// </summary>
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

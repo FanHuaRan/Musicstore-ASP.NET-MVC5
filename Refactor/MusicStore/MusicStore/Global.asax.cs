@@ -18,10 +18,6 @@ namespace MusicStore
             //Code First 数据库初始化
             System.Data.Entity.Database.SetInitializer(new MusicStore.EntityContext.SampleData());
             AreaRegistration.RegisterAllAreas();
-            //添加我们的过滤器到全局过滤器中 随后一起被注册
-            GlobalFilters.Filters.Add(new ActionAndResultFilterAttribute());
-            GlobalFilters.Filters.Add(new FilterExceptionAttribute());
-
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
